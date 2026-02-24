@@ -12,7 +12,7 @@ layout: null
 
 ## 1 INTRODUCTION
 
-[some general intro to the project]
+The stock market and prediction markets like Polymarket are two significant markets where money changes hands, and almost anyone can participate in them. They share many similarities, as both the stock market and Polymarket rely on making future predictions to increase the chances of making strategic investments and bets, leading to greater profits for investors and bettors. The main difference is that the stock market tends to involve long-term investment in company shares, whereas Polymarket is mainly betting on specific events, each one being a short-term result. Also, the stock market has been around since 1602, first established in the United States in 1792, but Polymarket have only existed since 2020.
 
 <figure>
 	<img src="https://placehold.co/600x240?text=Example+Figure+Placeholder" alt="Example figure placeholder" width="600" />
@@ -21,15 +21,19 @@ layout: null
 
 ### 1.1 Literature Review
 
-[placeholder]
+Therefore, it is very important and useful to be able to make accurate and efficient future predictions of the stock market and events on Polymarket. Machine learning algorithms can play a significant role in doing so. For the stock market, one study looked at “the effectiveness of algorithms like decision trees, random forests, support vector machines (SVM) with different kernels, and K-Means Clustering… [1].” It found that SVM using a Radial Base Function performed the best with the tradeoff of requiring significantly more time than the other algorithms, with an 88% prediction accuracy and runtime anywhere from about 50-2700% longer than the other algorithms. For Polymarket, one model used Reinforcement Learning with Verifiable Rewards on top of Large Language Models to capture both the data and other relevant information like news headlines, competing with the most current and advanced models and improving probabilistic calibration, leading to an estimated 10% return on investment in a Polymarket trading simulation [2]. It is hard to find sources comparing the two due to the novelty of this project, but studies have shown that prediction markets were more accurate than analysts in making predictions for company earnings, with prediction markets being 68% accurate for a week in advance and 77% accurate for a day in advance, but analysts were only 62% accurate [3]. This suggests that there is a strong connection between making predictions with both the stock market and Polymarket.
 
 ### 1.2 Dataset Description
 
-[placeholder]
+The first dataset being used is a stock market dataset, containing historical daily prices for all tickers (each has its own chart) currently trading on NASDAQ. Its features include the date, open, high, low, close, adj close, and volume for each ticker. There is also a csv file containing the general information about each ticker.
+There are two datasets being used for the Polymarket data, one called “Polymarket Prediction Markets” and the other called “Full market data from polymarket.” The first one contains deduplicated prediction market events and individual markets from Polymarket. It has a separate dataset for events, with features like event metadata, trading metrics, status flags, timestamps, category tags, competitiveness scores, and market counts per event, and markets, with features like market details, trading activity, order book data, event references, and reward structures. The second one contains raw market data collected from Polymarket Gamma API. Its features include the book, holder, price every 4 hours, and trade for each market.
 
 ### 1.3 Dataset Link
 
-[placeholder]
+For all datasets, more details and the actual datasets themselves can be found at these links:
+https://www.kaggle.com/datasets/jacksoncrow/stock-market-dataset
+https://www.kaggle.com/datasets/ismetsemedov/polymarket-prediction-markets/data?select=polymarket_markets.csv
+https://www.kaggle.com/datasets/sandeepkumarfromin/full-market-data-from-polymarket
 
 ## 2 PROBLEM DEFINITION
 Stock prediction algorithms are a staple in the machine learning world. Recently, however, polymarkets where users can place bets on things ranging from elections to sports outcomes have exploded, reaching ~$10b in monthly trade volume within less than two years of launch (see Figure 1). Our high level goal is to build a system which can optimally make investment decisions across both the stock and poly markets.
@@ -62,5 +66,11 @@ This motivates a project which 1. identifies if the dimensionality of stock/poly
 [placeholder]
 
 ## 5 REFERENCES
+
+[1]		A. Chakravorty and N. Elsayed, “A Comparative Study of Machine Learning Algorithms for Stock Price Prediction Using 		Insider Trading Data,” Arxiv.org, 2025. [Online]. Available: https://arxiv.org/html/2502.08728v1. [Accessed February 		23, 2026].
+
+[2]		B. Turtel, D. Franklin, K. Skotheim, L. Hewitt, and P. Schoenegger, “Outcome-based Reinforcement Learning to Predict 		the Future,” Arvix.org, 2025. [Online]. Available: https://arxiv.org/pdf/2505.17989. [Accessed February 23, 2026].
+
+[3]		G. McCubbing, “Can Polymarket-style prediction markets beat analysts this earnings season? Polymarket thinks so,” 			Australian Financial Review, February 4, 2026. [Online]. Available: https://www.afr.com/markets/equity-markets/can-			prediction-markets-beat-analysts-this-earnings-season-20260202-p5nyul [Accessed February 23, 2026].
 
 EXAMPLE: Sorokin, I., Puget J. F. (2025) NVARC solution to ARC-AGI-2 2025. Google Drive. [https://drive.google.com/file/d/1vkEluaaJTzaZiJL69TkZovJUkPSDH5Xc/view](https://drive.google.com/file/d/1vkEluaaJTzaZiJL69TkZovJUkPSDH5Xc/view)
