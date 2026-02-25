@@ -53,7 +53,44 @@ This motivates a project which 1. identifies if the dimensionality of stock/poly
 
 ## 3 METHODS
 
-[placeholder]
+### 3.1 Data Preprocessing
+
+#### Missing Value Handling
+Missing values in time series data (due to holidays or collection gaps) could be handled using `sklearn.impute.SimpleImputer` with median strategy as baseline, and `sklearn.impute.KNNImputer` (k=5) for preserving local structure. Time-series-specific interpolation (linear/spline) via `pandas` will also be evaluated.
+
+#### Feature Scaling
+To ensure fair comparison across markets with different scales, `sklearn.preprocessing.StandardScaler` applys Z-score normalization (mean=0, std=1). For datasets with outliers, `sklearn.preprocessing.RobustScaler` (based on median and IQR) provides stronger robustness.
+
+#### Feature Engineering and Time Series Processing
+Technical indicators could be computed using `pandas` and `numpy`: volatility (standard deviation of returns), volume trends (moving average slopes), and log returns. For time series, lagged features (1/3/7 periods), rolling statistics, and cyclical encodings (day-of-week, month) will be generated. `sklearn.preprocessing.PolynomialFeatures` will create interaction features to capture non-linear relationships.
+
+#### Target Variable Construction
+For stock prediction, continuous targets (log returns: log(Price_t+1/Price_t)) and discrete targets (three-class: up/down/flat based on ±1% threshold) could be constructed using `pandas` and `numpy`. For Polymarket, the target will be the difference between actual settlement results and current implied probability.
+
+### 3.2 Unsupervised Learning Methods
+
+#### Principal Component Analysis (PCA)
+`sklearn.decomposition.PCA` could reduce dimensionality while maximizing variance retention. The number of components explaining 95% variance will quantify intrinsic dimensionality differences between stock and Polymarket markets. PCA-reduced features will also serve as inputs to supervised models.
+
+#### K-Means Clustering and Gaussian Mixture Models (GMM)
+`sklearn.cluster.KMeans` will identify market states by minimizing within-cluster sum of squares, with optimal K determined by silhouette score (`sklearn.metrics.silhouette_score`) or elbow method. `sklearn.mixture.GaussianMixture` will handle irregular cluster shapes using probabilistic clustering, with model selection via Bayesian Information Criterion (BIC).
+
+#### Nonlinear Dimensionality Reduction and Visualization
+A `tensorflow.keras` autoencoder could extract nonlinear representations of complex market structures. For 2D visualization, UMAP (`umap-learn`) and t-SNE (`sklearn.manifold.TSNE`) will project the data to highlight distribution differences between markets.
+
+### 3.3 Supervised Learning Methods
+
+#### Random Forest and XGBoost
+`sklearn.ensemble.RandomForestClassifier/Regressor` could serve as the ensemble method, with hyperparameters (n_estimators, max_depth, min_samples_split) optimized via `sklearn.model_selection.GridSearchCV`. XGBoost (`xgboost` library) provides gradient boosting with parallel computation and built-in regularization to prevent overfitting.
+
+#### Support Vector Machines (SVM)
+`sklearn.svm.SVC` and `sklearn.svm.SVR` implement classification and regression with RBF kernels for capturing nonlinear relationships. Parameters C and gamma will be tuned via grid search. PCA preprocessing will be applied for computational efficiency on large datasets.
+
+#### Linear and Regularized Regression
+`sklearn.linear_model.LinearRegression` could provide the baseline. Ridge (`Ridge`, L2 regularization), Lasso (`Lasso`, L1 feature selection), and Elastic Net (`ElasticNet`, combined L1/L2) will prevent overfitting. Regularization strength alpha will be selected via cross-validation.
+
+#### Long Short-Term Memory (LSTM)
+LSTM networks implemented via `tensorflow.keras.layers.LSTM` or `torch.nn.LSTM` models long-term dependencies in time series data. Unlike traditional ML with fixed lag features, LSTM learns adaptive temporal patterns through gating mechanisms. Architecture: LSTM layers (50-100 units) followed by dense output layers. Dropout (0.2-0.3) prevents overfitting. Early stopping halts training when validation loss plateaus.
 
 ## 4 RESULTS AND DISCUSSION
 
