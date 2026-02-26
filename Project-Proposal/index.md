@@ -100,13 +100,13 @@ Our primary goal is to quantitatively determine if prediction markets like Polym
 
 To rigorously evaluate our methodology, we will use the following quantitative metrics based on the scikit-learn metrics API: 
 
-#### Explained Variance Ratio
+#### Explained Variance Ratio ('sklearn.metrics.explained_variance_score')
 Used during PCA to quantify the intrinsic dimensionality of each market. We will measure the proportion of the dataset's variance captured by each principal component, where comparing how many components that are needed to reach a 95% explained variance threshold will serve as our primary comparative measure.
-#### Mean Squared Error: mean_squared_error
+#### Mean Squared Error ('sklearn.metrics.mean_squared_error')
 The primary risk metric for evaluating the predictive accuracy of our supervised models (Random Forest, XGBoost, and LSTM). It represents the expected value of the squared error between our forecasted market values and the actual prices.
-#### R^2 Score: r2_score
+#### R^2 Score ('sklearn.metrics.r2_score')
 The coefficient of determination. We will use this to evaluate the goodness-of-fit for our predictive models, measuring the proportion of variance in future market prices that has been explained by the independent variables in the model.
-#### Silhouette Score
+#### Silhouette Score ('sklearn.metrics.silhouette_score')
 Used to evaluate our `sklearn.cluster.KMeans' and 'sklearn.mixture.GaussianMixture' clustering performance to ensure the discovered clusters (market regimes) are cohesive and well-separated from one another.
 
 #### Ethical Considerations
