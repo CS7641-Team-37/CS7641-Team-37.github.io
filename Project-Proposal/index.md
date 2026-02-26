@@ -119,22 +119,22 @@ Training deep learning models (LSTMs) consumes vast computational power. Proving
 
 ## 5 REFERENCES
 
-[1]		A. Chakravorty and N. Elsayed, “A Comparative Study of Machine Learning Algorithms for Stock Price Prediction Using Insider Trading Data,” Arxiv.org, 2025. [Online]. Available: https://arxiv.org/html/2502.08728v1. [Accessed February 23, 2026].
+[1]		A. Chakravorty and N. Elsayed, “A Comparative Study of Machine Learning Algorithms for Stock Price Prediction Using Insider Trading Data,” *arXiv.org*, 2025. [Online]. Available: https://arxiv.org/html/2502.08728v1. [Accessed February 23, 2026].
 
-[2]		B. Turtel, D. Franklin, K. Skotheim, L. Hewitt, and P. Schoenegger, “Outcome-based Reinforcement Learning to Predict the Future,” Arvix.org, 2025. [Online]. Available: https://arxiv.org/pdf/2505.17989. [Accessed February 23, 2026].
+[2]		B. Turtel, D. Franklin, K. Skotheim, L. Hewitt, and P. Schoenegger, “Outcome-based Reinforcement Learning to Predict the Future,” *arXiv.org*, 2025. [Online]. Available: https://arxiv.org/pdf/2505.17989. [Accessed February 23, 2026].
 
-[3]		G. McCubbing, “Can Polymarket-style prediction markets beat analysts this earnings season? Polymarket thinks so,” Australian Financial Review, February 4, 2026. [Online]. Available: https://www.afr.com/markets/equity-markets/can-prediction-markets-beat-analysts-this-earnings-season-20260202-p5nyul [Accessed February 23, 2026].
+[3]		G. McCubbing, “Can Polymarket-style prediction markets beat analysts this earnings season? Polymarket thinks so,” *Australian Financial Review*, February 4, 2026. [Online]. Available: https://www.afr.com/markets/equity-markets/can-prediction-markets-beat-analysts-this-earnings-season-20260202-p5nyul [Accessed February 23, 2026].
 
-[4]     I. Sorokin and J. F. Puget, "NVARC solution to ARC-AGI-2 2025," Google Drive, 2025. [Online]. Available: https://drive.google.com/file/d/1vkEluaaJTzaZiJL69TkZovJUkPSDH5Xc/view.
+[4]     I. Sorokin and J. F. Puget, "NVARC solution to ARC-AGI-2 2025," *Google Drive*, 2025. [Online]. Available: https://drive.google.com/file/d/1vkEluaaJTzaZiJL69TkZovJUkPSDH5Xc/view. [Accessed February 26, 2026].
 
-[5]     Scikit-learn developers, "3.4. Metrics and scoring: quantifying the quality of predictions," scikit-learn 1.8.0 documentation. [Online]. Available: https://scikit-learn.org/stable/modules/model_evaluation.html.
+[5]     Scikit-learn developers, "3.4. Metrics and scoring: quantifying the quality of predictions," *scikit-learn 1.8.0 documentation*. [Online]. Available: https://scikit-learn.org/stable/modules/model_evaluation.html. [Accessed February 26, 2026]. 
 
-[6] L. Breiman, "Random forests," Machine Learning, vol. 45, pp. 5–32, 2001.
+[6]     L. Breiman, "Random forests," *Machine Learning*, vol. 45, pp. 5–32, 2001. [Online]. Available: https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf. [Accessed February 26, 2026].
 
-[7] H. Zou, T. Hastie, and R. Tibshirani, "Sparse principal component analysis," Journal of 
-Computational and Graphical Statistics, vol. 15, no. 2, pp. 265–286, 2006.
+[7]     H. Zou, T. Hastie, and R. Tibshirani, "Sparse principal component analysis," *Journal of 
+Computational and Graphical Statistics*, vol. 15, no. 2, pp. 265–286, 2006. [Online]. Available: https://hastie.su.domains/Papers/spc_jcgs.pdf. [Accessed February 26, 2026].
 
-[8] J. B. Tenenbaum, V. de Silva, and J. C. Langford, "A global geometric framework for nonlinear dimensionality reduction," Science, vol. 290, pp. 2319–2323, 2000
+[8]     J. B. Tenenbaum, V. de Silva, and J. C. Langford, "A global geometric framework for nonlinear dimensionality reduction," *Science*, vol. 290, pp. 2319–2323, 2000. [Online]. Available: https://www.robots.ox.ac.uk/~az/lectures/ml/tenenbaum-isomap-Science2000.pdf. [Accessed February 26, 2026].
 
 ## 6 CONTRIBUTION TABLE
 
