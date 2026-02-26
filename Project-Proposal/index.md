@@ -96,11 +96,31 @@ LSTM networks implemented via `tensorflow.keras.layers.LSTM` or `torch.nn.LSTM` 
 
 ### 4.1 Project Goals (quantitative)
 
-[placeholder]
+Our primary goal is to quantitatively determine if prediction markets like Polymarket exhibit lower intrinsic dimensionality than traditional equity markets (NASDAQ, NYSE), and to leverage these findings to build optimal forecasting models across both domains.
+
+To rigorously evaluate our methodology, we will use the following quantitative metrics based on the scikit-learn metrics API: 
+
+- Explained Variance Ratio
+Used during PCA to quantify the intrinsic dimensionality of each market. We will measure the proportion of the dataset's variance captured by each principal component, where comparing how many components that are needed to reach a 95% explained variance threshold will serve as our primary comparative measure.
+- Mean Squared Error: mean_squared_error
+The primary risk metric for evaluating the predictive accuracy of our supervised models (Random Forest, XGBoost, and LSTM). It represents the expected value of the squared error between our forecasted market values and the actual prices.
+- R^2 Score: r2_score
+The coefficient of determination. We will use this to evaluate the goodness-of-fit for our predictive models, measuring the proportion of variance in future market prices that has been explained by the independent variables in the model.
+- Silhouette Score:
+Used to evaluate our `sklearn.cluster.KMeans' and 'sklearn.mixture.GaussianMixture' clustering performance to ensure the discovered clusters (market regimes) are cohesive and well-separated from one another.
+
+- Ethical Considerations:
+Financial forecasting algorithms designed to "optimally make investment decisions" across stock and prediction markets carry inherent risks. Because prediction markets like Polymarket are in their relative infancy, they exhibit high volatility and are heavily driven by "social sentiment and narrative polarization" rather than purely objective financial reality. We aim to transparently document our model's limitations to prevent algorithmic biases or blind trust in our system for high-stakes financial decisions.
+- Sustainability Considerations:
+Training complex, deep learning financial models, such as the proposed LSTM networks and nonlinear autoencoders, consumes vast amounts of computational power and energy. However, if our unsupervised dimensionality reduction using PCA successfully proves that these markets exhibit lower intrinsic dimensionality, it highlights a pathway for more energy-efficient financial modeling. By identifying which signals are truly transferable across markets, we can justify using simpler, computationally cheaper models to reduce unnecessary computational overhead and carbon emissions.
 
 ### 4.2 Expected Results (quantitative)
-
-[placeholder]
+- Dimensionality Differences:
+Because Polymarket contracts are tied to specific, binary outcomes (elections), we expect them to exhibit a lower intrinsic dimensionality than the highly interconnected stock market. Specifically, we hypothesize that Polymarket will require significantly fewer principal components to reach a 95% Explained Variance Ratio compared to NASDAQ.
+- Market Regime Clustering:
+We expect our unsupervised clustering models to successfully group time-series windows into distinct market states (high-volatility vs. stable periods). A successful grouping will be quantitatively reflected by a high Silhouette Score.
+- Forecasting Performance:
+Financial markets contain heavy noise. We expect that applying XGBoost and LSTM models to PCA-reduced features—and conditioning them on the discovered market clusters—will yield specialized models that outperform a single, global regression model. We hypothesize this will be quantitatively reflected by a significantly lower MSE and an R^2 Score closer to 1.0.
 
 ## 5 REFERENCES
 
