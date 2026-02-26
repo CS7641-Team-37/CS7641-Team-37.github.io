@@ -94,37 +94,28 @@ LSTM networks implemented via `tensorflow.keras.layers.LSTM` or `torch.nn.LSTM` 
 
 ## 4 RESULTS AND DISCUSSION
 
-### 4.1 Project Goals (quantitative)
+### 4.1 Project Goals & Expected Results (Quantitative)
 
-Our primary goal is to quantitatively determine if prediction markets like Polymarket exhibit lower intrinsic dimensionality than traditional equity markets (NASDAQ, NYSE), and to leverage these findings to build optimal forecasting models across both domains.
+Our primary goal is to quantitatively determine if prediction markets (Polymarket) exhibit lower intrinsic dimensionality than equity markets (NASDAQ, NYSE), leveraging these findings to build optimal forecasting models. We expect Polymarket to show lower intrinsic dimensionality due to its binary, outcome-specific nature.
 
-To rigorously evaluate our methodology, we will use the following quantitative metrics based on the scikit-learn metrics API: 
+To evaluate our methodology, we will use the following scikit-learn metrics:
 
 #### Explained Variance Ratio ('sklearn.metrics.explained_variance_score')
-Used during PCA to quantify the intrinsic dimensionality of each market. We will measure the proportion of the dataset's variance captured by each principal component, where comparing how many components that are needed to reach a 95% explained variance threshold will serve as our primary comparative measure.
+Quantifies intrinsic dimensionality via PCA. If traditional markets exist on highly complex, nonlinear manifolds, we expect nonlinear algorithms (Isomap) or Sparse PCA to better preserve geometry and interpretability. We hypothesize Polymarket will require significantly fewer components to reach 95% explained variance.
 #### Mean Squared Error ('sklearn.metrics.mean_squared_error')
-The primary risk metric for evaluating the predictive accuracy of our supervised models (Random Forest, XGBoost, and LSTM). It represents the expected value of the squared error between our forecasted market values and the actual prices.
+The primary predictive risk metric. Given heavy market noise, we expect Random Forests to provide a robust, low-MSE baseline that resists overfitting.
 #### R^2 Score ('sklearn.metrics.r2_score')
-The coefficient of determination. We will use this to evaluate the goodness-of-fit for our predictive models, measuring the proportion of variance in future market prices that has been explained by the independent variables in the model.
+Measures the proportion of future price variance successfully explained by our independent variables.
 #### Silhouette Score ('sklearn.metrics.silhouette_score')
-Used to evaluate our `sklearn.cluster.KMeans' and 'sklearn.mixture.GaussianMixture' clustering performance to ensure the discovered clusters (market regimes) are cohesive and well-separated from one another.
+Evaluates clustering performance to ensure discovered market regimes are cohesive and well-separated.
 
-#### Ethical Considerations
-Financial forecasting algorithms designed to "optimally make investment decisions" across stock and prediction markets carry inherent risks. Because prediction markets like Polymarket are in their relative infancy, they exhibit high volatility and are heavily driven by "social sentiment and narrative polarization" rather than purely objective financial reality. We aim to transparently document our model's limitations to prevent algorithmic biases or blind trust in our system for high-stakes financial decisions.
-
-#### Sustainability Considerations
-Training complex, deep learning financial models, such as the proposed LSTM networks and nonlinear autoencoders, consumes vast amounts of computational power and energy. However, if our unsupervised dimensionality reduction using PCA successfully proves that these markets exhibit lower intrinsic dimensionality, it highlights a pathway for more energy-efficient financial modeling. By identifying which signals are truly transferable across markets, we can justify using simpler, computationally cheaper models to reduce unnecessary computational overhead and carbon emissions.
 
 ### 4.2 Expected Results (quantitative)
 
-#### Dimensionality Differences
-Because Polymarket contracts are tied to specific, binary outcomes (elections), we expect them to exhibit a lower intrinsic dimensionality than the highly interconnected stock market. Specifically, we hypothesize that Polymarket will require significantly fewer principal components to reach a 95% Explained Variance Ratio compared to NASDAQ.
-
-#### Market Regime Clustering
-We expect our unsupervised clustering models to successfully group time-series windows into distinct market states (high-volatility vs. stable periods). A successful grouping will be quantitatively reflected by a high Silhouette Score.
-
-#### Forecasting Performance
-Financial markets contain heavy noise. We expect that applying XGBoost and LSTM models to PCA-reduced features—and conditioning them on the discovered market clusters—will yield specialized models that outperform a single, global regression model. We hypothesize this will be quantitatively reflected by a significantly lower MSE and an R^2 Score closer to 1.0.
+#### Ethical Considerations
+Financial forecasting carries inherent risks. Prediction markets are volatile and heavily driven by social sentiment rather than objective financial reality. We will transparently document model limitations to prevent algorithmic bias or blind trust in high-stakes decisions.
+#### Sustainability Considerations
+Training deep learning models (LSTMs) consumes vast computational power. Proving these markets exhibit lower intrinsic dimensionality justifies using computationally efficient methods, reducing our carbon footprint and energy overhead.
 
 ## 5 REFERENCES
 
@@ -137,6 +128,13 @@ Financial markets contain heavy noise. We expect that applying XGBoost and LSTM 
 [4]     I. Sorokin and J. F. Puget, "NVARC solution to ARC-AGI-2 2025," Google Drive, 2025. [Online]. Available: https://drive.google.com/file/d/1vkEluaaJTzaZiJL69TkZovJUkPSDH5Xc/view.
 
 [5]     Scikit-learn developers, "3.4. Metrics and scoring: quantifying the quality of predictions," scikit-learn 1.8.0 documentation. [Online]. Available: https://scikit-learn.org/stable/modules/model_evaluation.html.
+
+[6] L. Breiman, "Random forests," Machine Learning, vol. 45, pp. 5–32, 2001.
+
+[7] H. Zou, T. Hastie, and R. Tibshirani, "Sparse principal component analysis," Journal of 
+Computational and Graphical Statistics, vol. 15, no. 2, pp. 265–286, 2006.
+
+[8] J. B. Tenenbaum, V. de Silva, and J. C. Langford, "A global geometric framework for nonlinear dimensionality reduction," Science, vol. 290, pp. 2319–2323, 2000
 
 ## 6 CONTRIBUTION TABLE
 
