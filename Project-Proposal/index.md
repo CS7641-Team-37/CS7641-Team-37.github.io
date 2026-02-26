@@ -135,3 +135,15 @@ Financial markets contain heavy noise. We expect that applying XGBoost and LSTM 
 [3]		G. McCubbing, “Can Polymarket-style prediction markets beat analysts this earnings season? Polymarket thinks so,” 			Australian Financial Review, February 4, 2026. [Online]. Available: https://www.afr.com/markets/equity-markets/can-			prediction-markets-beat-analysts-this-earnings-season-20260202-p5nyul [Accessed February 23, 2026].
 
 EXAMPLE: Sorokin, I., Puget J. F. (2025) NVARC solution to ARC-AGI-2 2025. Google Drive. [https://drive.google.com/file/d/1vkEluaaJTzaZiJL69TkZovJUkPSDH5Xc/view](https://drive.google.com/file/d/1vkEluaaJTzaZiJL69TkZovJUkPSDH5Xc/view)
+
+## 6 CONTRIBUTION TABLE
+
+| Name | Proposal Contributions |
+| :--- | :--- |
+| Name | Contributions |
+| Name | Contributions |
+| Name | Contributions |
+| Name | Contributions |
+| Name | Contributions |
+
+## 7 GANTT CHART
