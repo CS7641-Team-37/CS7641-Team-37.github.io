@@ -127,10 +127,14 @@ Computational and Graphical Statistics*, vol. 15, no. 2, pp. 265–286, 2006. [O
 
 | Name | Proposal Contributions |
 | :--- | :--- |
-| Name | Contributions |
-| Name | Contributions |
-| Name | Contributions |
-| Name | Contributions |
-| Name | Contributions |
+| Anurag | Results and Discussion |
+| Liam | Introduction |
+| Qi | Methods |
+| Rishi | Video |
+| Srikar | GitHub Page, Problem Definition, Gantt Chart |
 
 ## 7 GANTT CHART
+
+<iframe src="https://docs.google.com/spreadsheets/d/1nu-2pwDSJyywXDGZApaWrdt2rIDtcl7X/preview" width="100%" height="700" style="border: 1px solid #ddd;"></iframe>
+
+View in Google Sheets: [Gantt Chart](https://docs.google.com/spreadsheets/d/1nu-2pwDSJyywXDGZApaWrdt2rIDtcl7X/edit?usp=sharing&ouid=104160576029283737341&rtpof=true&sd=true)
