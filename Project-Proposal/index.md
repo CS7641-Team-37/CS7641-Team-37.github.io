@@ -65,7 +65,6 @@ This motivates a project which 1. identifies if the dimensionality of stock/poly
 
 ### Preprocessing Methods
 
-- **Feature Extraction:** We use PCA to reduce dimensionality and identify intrinsic dimensionality differences between stock and Polymarket markets.
 - **Data Cleaning:** Interpolation will handle missing values stemming from market holidays or collection gaps. SimpleImputer and KNNImputer will preserve local temporal structures during imputation.
 - **Data Normalization:** We normalize features with StandardScaler (Z-score) for fair comparison across markets, and RobustScaler for outlier-heavy datasets.
 - **Feature Engineering:** We will compute key technical indicators (volatility, volume trends, log returns) and generate temporal features, including rolling statistics, cyclical encodings (e.g., day-of-week), and lagged variables to capture short-term momentum.
@@ -73,11 +72,12 @@ This motivates a project which 1. identifies if the dimensionality of stock/poly
 
 ### ML Algorithms
 
-- **Linear Regression:** We use linear regression and could apply Ridge, Lasso, and Elastic Net regularization to prevent overfitting, with alpha selected via cross-validation.
+- **Principal Component Analysis:** We use PCA to reduce dimensionality and identify intrinsic dimensionality differences between stock and Polymarket markets.
+- **Linear Regression:** We apply linear regression and could use Ridge, Lasso, and Elastic Net regularization to prevent overfitting, with alpha selected via cross-validation.
 - **Support Vector Machine:** To capture complex, non-linear market relationships,we use SVM for classification and regression tasks.
 - **Long Short-Term Memory network:** Given the temporal nature of market data, we use LSTM networks to model long-term dependencies.
 
-Linear Regression and SVM can be implemented via scikit-learn; LSTM via PyTorch.
+PCA, Linear Regression and SVM can be implemented via scikit-learn; LSTM via PyTorch.
 
 ## 4 RESULTS AND DISCUSSION
 
