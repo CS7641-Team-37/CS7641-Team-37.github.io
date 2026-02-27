@@ -20,8 +20,24 @@ It is important to make accurate and efficient predictions in both markets, vita
 
 ### 1.2 Dataset Description
 
-The first dataset is a stock market dataset, containing historical daily prices for all current NASDAQ tickers (each has its own chart). Its features include the date, open, high, low, close, adj close, and volume for each ticker. There's also a csv file containing each ticker's general information.
-There are two datasets for the Polymarket data, “Polymarket Prediction Markets” and “Full market data from polymarket.” The first contains deduplicated prediction market events and individual markets from Polymarket. There's a separate dataset for events, with features like event metadata, trading metrics, status flags, timestamps, category tags, competitiveness scores, and market counts per event, and markets, with features like market details, trading activity, order book data, event references, and reward structures. The second one contains raw market data collected from Polymarket Gamma API. Its features include the book, holder, price every 4 hours, and trade for each market.
+<ul>
+	<li>Stock market dataset</li>
+	<ul>
+		<li>Historical daily prices for all current NASDAQ tickers</li>
+		<li>Features: date, open, high, low, close, adj close, and volume for each ticker</li>
+	</ul>
+	<li>Polymarket prediction markets</li>
+	<ul>
+		<li>Deduplicated prediction market events and individual markets from Polymarket</li>
+		<li>Events features: event metadata, trading metrics, status flags, timestamps, category tags, competitiveness scores, market counts per event, etc.</li>
+		<li>Markets features: market details, trading activity, order book data, event references, reward structures, etc.</li>
+	</ul>
+	<li>Full market data from polymarket</li>
+	<ul>
+		<li>Raw market data from Polymarket Gamma API</li>
+		<li>Features: book, holder, price every 4 hours, trade for each market, etc.</li>
+	</ul>
+</ul>
 
 ### 1.3 Dataset Links
 
