@@ -16,7 +16,7 @@ The stock market and Polymarket involve money changing hands, and almost anyone 
 
 ### 1.1 Literature Review
 
-It is important to make accurate and efficient predictions in both markets, vitalizing machine learning algorithms. For the stock market, one study analyzed “the effectiveness of algorithms like decision trees, random forests, support vector machines (SVM) with different kernels, and K-Means Clustering… [1].” Radial Base Function SVM performed the best (88% prediction accuracy) but ran longer than the other algorithms. For Polymarket, one model used Reinforcement Learning with Verifiable Rewards and Large Language Models, competing with the best models and leading to about 10% ROI in a Polymarket simulation [2]. Also, studies have shown that prediction markets were more accurate than analysts regarding company earnings predictions, with 68% accuracy a week out and 77% accuracy a day out, but analysts were only 62% accurate [3]. This suggests there's a strong connection between making predictions with both markets.
+For the stock market, one study analyzed “...algorithms like decision trees, random forests, [SVM] with different kernels, and K-Means… [1].” Radial Base Function SVM performed the best (88% prediction accuracy) but ran the longest. For Polymarket, one model used Reinforcement Learning with Verifiable Rewards and LLMs, challenging the best models and leading to about 10% ROI in a Polymarket simulation [2]. Also, studies showed prediction markets were more accurate than analysts regarding company earnings predictions, with 68% accuracy a week out and 77% accuracy a day out, but analysts were only 62% accurate [3]. This suggests a strong connection between predictions with both markets.
 
 ### 1.2 Dataset Description
 
