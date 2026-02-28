@@ -83,32 +83,21 @@ PCA, Linear Regression and SVM can be implemented via scikit-learn; LSTM via PyT
 
 ### 4.1 Project Goals & Expected Results (Quantitative)
 
-Our primary goal is to quantitatively determine if prediction markets (Polymarket) exhibit lower intrinsic dimensionality than equity markets (NASDAQ, NYSE), leveraging these findings to build optimal forecasting models. We expect Polymarket to show lower intrinsic dimensionality due to its binary, outcome-specific nature.
+We aim to prove prediction markets (Polymarket) exhibit lower intrinsic dimensionality than equity markets (NASDAQ, NYSE) due to their binary nature, leveraging this to optimize cross-market forecasting. We will evaluate our methodology using scikit-learn metrics[5][8].
 
-To evaluate our methodology, we will use the following scikit-learn metrics [4]:
+- **Explained Variance Ratio ('sklearn.metrics.explained_variance_score'):** Assesses intrinsic dimensionality via PCA[8]. We hypothesize Polymarket requires significantly fewer components to reach 95% variance. If markets are highly nonlinear, Isomap or Sparse PCA will better preserve geometry.[7]
 
-#### Explained Variance Ratio ('sklearn.metrics.explained_variance_score')
+- **MSE('sklearn.metrics.mean_squared_error'):** Primary predictive risk metric. We expect Random Forests to provide a robust, low-MSE baseline against market noise.[6]
 
-Quantifies intrinsic dimensionality via PCA. If traditional markets exist on highly complex, nonlinear manifolds, we expect nonlinear algorithms (Isomap [5]) or Sparse PCA [6] to better preserve geometry and interpretability. We hypothesize Polymarket will require significantly fewer components to reach 95% explained variance.
+- **R^2 Score('sklearn.metrics.r2_score'):** Measures the proportion of future price variance successfully explained by our models.
 
-#### R^2 Score ('sklearn.metrics.r2_score')
-
-Measures the proportion of future price variance successfully explained by our independent variables.
-
-#### Silhouette Score ('sklearn.metrics.silhouette_score')
-
-Evaluates clustering performance to ensure discovered market regimes are cohesive and well-separated.
+- **Silhouette Score ('sklearn.metrics.silhouette_score'):** Ensures discovered market regime clusters are well-separated and cohesive.
 
 
 ### 4.2 Expected Results (quantitative)
 
-#### Ethical Considerations
-
-Financial forecasting carries inherent risks. Prediction markets are volatile and heavily driven by social sentiment rather than objective financial reality. We will transparently document model limitations to prevent algorithmic bias or blind trust in high-stakes decisions.
-
-#### Sustainability Considerations
-
-Training deep learning models (LSTMs) consumes vast computational power. Proving these markets exhibit lower intrinsic dimensionality justifies using computationally efficient methods, reducing our carbon footprint and energy overhead [7].
+- **Ethics:** Financial algorithms carry high-stakes risks. Prediction markets often reflect volatile social sentiment rather than objective reality. We will transparently document limitations to prevent blind trust and algorithmic bias.
+- **Sustainability:** Training deep learning models (LSTMs) consumes vast computational power. Proving lower intrinsic dimensionality justifies using simpler, energy-efficient models, directly reducing our carbon footprint.
 
 ## 5 REFERENCES
 
